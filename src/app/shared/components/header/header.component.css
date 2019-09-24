@@ -1,0 +1,22 @@
+.header {
+  background-color: black;
+  color: #FFF;
+  padding: 20px;
+}
+
+.menu {
+  padding-top: 15px;
+  text-align: right;
+}
+
+.menu li {
+  display: inline-block;
+  margin: 0;
+  padding: 0 0 0 20px;
+}
+
+.menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
