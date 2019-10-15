@@ -1,3 +1,27 @@
+.marginTop{
+  margin-top: 50px;
+}
+
+.text-center {
+  text-align: center;
+}
+
 .center {
   margin: auto;
 }
+
+.error {
+  color: red;
+}
+
+.success {
+  text-align: center;
+  color: green;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 10px;
+  width: 200px;
+  margin: auto;
+  background: #8080800d;
+}
+
