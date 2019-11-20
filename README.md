@@ -21,7 +21,11 @@ Your challenge is to create contact form using Reactive Forms in Angular and .
 5. Style the forms to be centered vertically and horizontally on the page
 
 
-## Server Side
+## API/Server Side
+Create Angular services to make API calls, use https://jsonplaceholder.typicode.com/posts to post form data
+
+OR
+
 1. Create your server code with Node/Express Framework to listen to your front call. When server is launched, print every submitted form to the console only if shouldAddToNewsletter is true. Every submitted form is stored into MONGO DB.
 2. Test your Node/Express route with a test/test_app.ts, using any testing framework you like (mocha, chai, jest, ...).
 
