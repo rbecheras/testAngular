@@ -34,7 +34,8 @@ OR (for Back-End only developpers) :
 Write a function that use the numbers from the phone number form (space separatted) to arrange them such that they form the largest possible number and console log this number, server side. For example, given [33, 6, 10, 19, 12, 99], the largest formed number is 99633191210
 
 ## MONGO DB
-Write a request which returns a sorted list of all DB elements, sorted by email or "largest phone number" (see above function).
+Write a model to store the Contact Form data.
+Write a request which returns a sorted list of all DB elements, sorted by creation history, or by email, or by "largest phone number" (see above function, writing it is not necessary to answer this question).
 
 
 ## Front-End Bonus
