@@ -47,4 +47,8 @@ Write a request which returns a sorted list of all DB elements, sorted by email 
 - Create a node function that will be triggered each day (don't bother implementing the triggering) that will use a MongoDB request to get all contacts stored and will sequentially but asynchronously send them by group of 10 to a distant API for validation, requestind and using API SDK function distantAPI.checkPhoneNumbers([Array of Integers], clientToken). Require another maked up function from the API SDK to get the token. 
 
 ## Completion 
-- send a link to your repo to Mohamed: mkeita@freelance.com
+- send a link to your repo to 
+	Mohamed: mkeita@freelance.com
+	Jean-Michel : jmmas@freelance.com
+
+MErci et bon courage !
