@@ -45,11 +45,13 @@ Write a request which returns a sorted list of all DB elements, sorted by creati
 
 ## Back-End Bonus
 - Provide some server side config file separation for dev and prod environments
-- Create a node function that will be triggered each day (don't bother implementing the triggering) that will use a MongoDB request to get all contacts stored and will sequentially but asynchronously send them by group of 10 to a distant API for validation, requestind and using API SDK function distantAPI.checkPhoneNumbers([Array of Integers], clientToken). Require another maked up function from the API SDK to get the token. 
+- We need to create a function to send SMS to all contacts phone numbers, to send an SMS to any given phone number, you will use an API's SDK. Do as follows :
+	1. create a MongoDB request to get all contacts stored 
+	2. create the node function that will send the SMS "Hi ${contact name}!". IMPORTANT : there are api restrictions, you can make up to 10 maximum asynchronous calls to the api, wait for the answers, and then continue with the other calls (up to 10 max), sequentially. Require and use API SDK function distantAPI.sensSMS([Array of Integers], message, clientToken). Require another maked up function from the API SDK to get the token. 
 
 ## Completion 
 - send a link to your repo to 
 	Mohamed: mkeita@freelance.com
 	Jean-Michel : jmmas@freelance.com
 
-MErci et bon courage !
+Merci et bon courage !
