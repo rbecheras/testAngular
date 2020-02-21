@@ -1,5 +1,7 @@
 # MEAN-challenge
 
+## Set up and start
+
 Clone the repo
 
 ```
@@ -24,3 +26,8 @@ cd back
 npm i
 npm start
 ```
+
+## APIs
+
+* `GET /apis/contacts`
+* `POST /apis/contacts`
