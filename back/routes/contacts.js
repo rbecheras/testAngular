@@ -9,7 +9,7 @@ router.post('/', function (req, res, next) {
 
   mongoose.model('Contact')
     .create(req.body)
-    .then(doc => res.json({
+    .then(doc => res.status(201).json({
       status: 201,
       message: 'created',
       doc
