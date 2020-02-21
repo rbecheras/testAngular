@@ -8,9 +8,9 @@ import { FormControl, Validators } from '@angular/forms';
 })
 export class ContactComponent {
 
-  name = new FormControl('Bob', [Validators.required]);
-  email = new FormControl('bob@example.com', [Validators.required]);
-  phoneNumber = new FormControl('555 123 456', [Validators.required]);
+  name = new FormControl('', [Validators.required]);
+  email = new FormControl('', [Validators.required, Validators.email]);
+  phoneNumber = new FormControl('', [Validators.required, Validators.pattern(/[0-9]{10}/)]);
   shouldAddToNewsletter = new FormControl(true);
 
   nameRequiredError = false;

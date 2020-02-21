@@ -1,26 +1,46 @@
 <div>
   <h1>Contact</h1>
 
-  <p>
+  <div>
     <label for="name">Name</label>
     <input type="text" [formControl]="name" name="name">
-    <span class="formError" *ngIf="name.errors && name.errors.required">Required</span>
-  </p>
-  <p>
+
+    <span class="formSuccess" *ngIf="!name.errors"></span>
+    <div class="formError" *ngIf="!name.pristine && name.errors">
+      <span *ngIf="name.errors.required">Please enter your name</span>
+    </div>
+  </div>
+
+  <div>
     <label for="email">Email</label>
     <input type="email" [formControl]="email" name="email">
-    <span class="formError" *ngIf="email.errors && email.errors.required">Required</span>
-  </p>
-  <p>
+
+    <span class="formSuccess" *ngIf="!email.errors"></span>
+    <div class="formError" *ngIf="!email.pristine && email.errors">
+      <span *ngIf="email.errors.required">Please enter your email</span>
+      <span *ngIf="email.errors.email"><br>Please use a valid email format (ex:
+        john@example.com)</span>
+    </div>
+  </div>
+
+  <div>
     <label for="phoneNumber">Phone number</label>
     <input type="tel" [formControl]="phoneNumber" name="phoneNumber">
-    <span class="formError" *ngIf="phoneNumber.errors && phoneNumber.errors.required">Required</span>
-  </p>
-  <p>
+
+    <span class="formSuccess" *ngIf="!phoneNumber.errors"></span>
+    <div class="formError" *ngIf="!phoneNumber.pristine && phoneNumber.errors">
+      <span *ngIf="phoneNumber.errors.required">Please enter your phone number</span>
+      <span *ngIf="phoneNumber.errors.pattern"><br>Please use a valid phone number format (ex:
+        0123456789)</span>
+    </div>
+
+  </div>
+  <div>
     <label for="shouldAddToNewsletter">Subscribe to the newsletter ?</label>
     <input type="checkbox" [formControl]="shouldAddToNewsletter" name="shouldAddToNewsletter">
-  </p>
+  </div>
 
-  <button type="submit" (click)="submit()">SUBMIT</button>
+  <button type="submit" [disabled]="name.errors || email.errors || phoneNumber.errors"
+    (click)="submit()">SUBMIT</button>
 
 </div>

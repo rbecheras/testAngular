@@ -1,3 +1,13 @@
-span.formError {
+.formError {
   color: red;
+}
+
+.formSuccess {
+  color: green;
+}
+
+.formSuccess::before {
+  color: green;
+  content: '✓';
+  font-size: 2em;
 }
