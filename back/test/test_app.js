@@ -3,6 +3,7 @@ const request = require('supertest');
 
 const expect = require('chai').expect;
 const app = require('../bin/www');
+const formMaxNumberFromPhoneNumber = require('../lib').formMaxNumberFromPhoneNumber
 
 describe('GET /', function () {
     it('respond server alive', function (done) {
@@ -27,7 +28,7 @@ describe('POST /apis/contacts', function () {
             .send({
                 name: 'foo',
                 email: 'foo@example.com',
-                phoneNumber: '0123456789',
+                phoneNumber: '33123456789',
                 shouldAddToNewsletter: false
             })
             .expect(201)
@@ -40,3 +41,18 @@ describe('POST /apis/contacts', function () {
             });
     })
 });
+
+describe('function formMaxNumberFromPhoneNumber()', function () {
+    it('return a number', function (done) {
+        expect(formMaxNumberFromPhoneNumber('33123456789')).to.be.a('number')
+        done()
+    })
+    it('return the highest number from input "33,1,23,45,67,89"', function (done) {
+        expect(formMaxNumberFromPhoneNumber('33123456789')).to.equal(89674533231)
+        done()
+    })
+    it('return the highest number from input "33,6,10,19,12,99"', function (done) {
+        expect(formMaxNumberFromPhoneNumber('33610191299')).to.equal(99633191210)
+        done()
+    })
+})
