@@ -1,4 +1,26 @@
 <div>
   <h1>Contact</h1>
-  <p>This page is Contact.</p>
+
+  <p>
+    <label for="name">Name</label>
+    <input type="text" [formControl]="name" name="name">
+    <span class="formError" *ngIf="name.errors && name.errors.required">Required</span>
+  </p>
+  <p>
+    <label for="email">Email</label>
+    <input type="email" [formControl]="email" name="email">
+    <span class="formError" *ngIf="email.errors && email.errors.required">Required</span>
+  </p>
+  <p>
+    <label for="phoneNumber">Phone number</label>
+    <input type="tel" [formControl]="phoneNumber" name="phoneNumber">
+    <span class="formError" *ngIf="phoneNumber.errors && phoneNumber.errors.required">Required</span>
+  </p>
+  <p>
+    <label for="shouldAddToNewsletter">Subscribe to the newsletter ?</label>
+    <input type="checkbox" [formControl]="shouldAddToNewsletter" name="shouldAddToNewsletter">
+  </p>
+
+  <button type="submit" (click)="submit()">SUBMIT</button>
+
 </div>
