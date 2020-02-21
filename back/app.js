@@ -1,9 +1,25 @@
 const express = require('express');
 const logger = require('morgan');
 const cors = require('cors')
+const mongoose = require('mongoose');
 
 const indexRouter = require('./routes/index');
 const contactsRouter = require('./routes/contacts');
+
+
+const db = mongoose.connection;
+mongoose.connect('mongodb://localhost:27017/freelance', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+});
+db.on('error', err => {
+  console.error('MongoDB connection failed', err)
+  process.exit(1)
+})
+db.once('open', function () {
+  console.log('MongoDB connection success');
+  require('./models/contact')
+});
 
 const app = express();
 
