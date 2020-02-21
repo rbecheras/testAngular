@@ -1,3 +1,17 @@
+.form {
+  border: 1px gray solid;
+  padding: 20px;
+  width: 500px;
+  height: 300px;
+
+  /* center h & v on the page, not in the form component itself (see readme #4) */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
 .formError {
   color: red;
 }
