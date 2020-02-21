@@ -24,7 +24,7 @@ Install and run the express server
 ```
 cd back
 npm i
-npm start
+npm test
 ```
 
 ## APIs
