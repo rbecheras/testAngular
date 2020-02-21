@@ -4,6 +4,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { ContactRoutingModule } from './contact-routing.module';
 import { ContactComponent } from './contact.component';
+import { ContactService } from './contact.service';
 
 @NgModule({
   imports: [
@@ -13,6 +14,9 @@ import { ContactComponent } from './contact.component';
   ],
   declarations: [
     ContactComponent
+  ],
+  providers: [
+    ContactService
   ]
 })
 export class ContactModule { }

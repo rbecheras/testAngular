@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { ContactService } from './contact.service';
 
 @Component({
   selector: 'app-contact',
@@ -18,16 +19,20 @@ export class ContactComponent {
   phoneNumberRequiredError = false;
   shouldAddToNewsletterRequiredError = false;
 
-  public submit() {
-    console.log({
-      name: this.name,
-      email: this.email,
-      phone: this.phoneNumber,
-      newsletter: this.shouldAddToNewsletter
-    });
+  constructor(private contactService: ContactService) { }
 
+  public submit() {
     if (!this.name.errors && !this.email.errors && !this.phoneNumber.errors) {
-      console.log('submit');
+      this.contactService.postData({
+        name: this.name.value,
+        email: this.email.value,
+        phoneNumber: this.phoneNumber.value,
+        shouldAddToNewsletter: this.shouldAddToNewsletter.value
+      }).toPromise().then(resp => {
+        console.log({ resp });
+      }).catch(err => {
+        console.error({ err });
+      });
     } else {
       console.error('form input errors');
     }
