@@ -7,6 +7,10 @@ const routes: Routes = [
     loadChildren: './layout/layout.module#LayoutModule'
   },
   {
+    path: 'contact',
+    loadChildren: './contact/contact.module#ContactModule'
+  },
+  {
     path: 'not-found',
     loadChildren: './not-found/not-found.module#NotFoundModule'
   },
@@ -21,7 +25,7 @@ const routes: Routes = [
     useHash: true,
     preloadingStrategy: PreloadAllModules,
     onSameUrlNavigation: 'reload'
-})],
+  })],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
